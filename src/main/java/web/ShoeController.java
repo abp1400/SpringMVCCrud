@@ -70,7 +70,7 @@ public class ShoeController {
 		return mv;
 	}
 //	
-	@RequestMapping(path="getShoe.do", method=RequestMethod.POST)
+	@RequestMapping(path="getShoeByPrice.do", method=RequestMethod.POST)
 	public ModelAndView getShoeByBrand(@Valid @ModelAttribute("idForm") ShoeIdForm f, Errors e) {
 		ModelAndView mv = new ModelAndView("index");
 		if(e.hasErrors()) {
@@ -78,7 +78,7 @@ public class ShoeController {
 			return mv;
 		}
 		mv.setViewName("info2");
-		List<Shoe> l = dao.getShoeByBrand(f.getBrand());
+		List<Shoe> l = dao.getShoeByRpriceLessThanEqualTo(f.getrprice());
 		mv.addObject("shoes",l);
 		return mv;
 	}

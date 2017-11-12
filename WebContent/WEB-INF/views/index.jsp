@@ -26,13 +26,14 @@
 
 
 
-<%-- <h2>Filter Shoes by </h2>
- <form:form action="getShoe.do" method="post" modelAttribute="idForm">
-<form:input path="brand"/> <form:errors path="brand"/>
+<h2>Filter Shoes by Resale Price </h2><br>
+ Enter a Maximum Resale Price:
+ <form:form action="getShoeByPrice.do" method="post" modelAttribute="idForm">
+<form:input path="rprice"/> <form:errors path="rprice"/>
 
-<input type="submit" value="Get Shoes by Brand">
+<input type="submit" value="Get Shoes by Resale Value">
 
-</form:form>  --%>
+</form:form> 
 
 
 <h3>All Shoes:</h3> <br>

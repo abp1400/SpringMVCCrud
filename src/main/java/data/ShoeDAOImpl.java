@@ -1,9 +1,7 @@
 package data;
 
-import java.util.List;
-import java.util.Map;
-
 import org.springframework.stereotype.Repository;
+
 
 import java.util.*;
 @Repository
@@ -34,6 +32,7 @@ public class ShoeDAOImpl implements ShoeDAO {
 		shoes.put(index, new Shoe(index++,"Jordan","Jordan 1","Red-White",65,2500,"I.jpg"));
 		shoes.put(index, new Shoe(index++,"Nike","Air Yeezy 2","Red",245,5500,"J.jpg"));
 		shoes.put(index, new Shoe(index++,"Nike","Air Mag Auto Lace","Grey",10,55000,"K.jpg"));
+		shoes.put(index, new Shoe(index++,"Adidas","Yeezy Boost 350 V2","Black",220,1150,"L.jpg"));
 		
 	}
 	
@@ -58,6 +57,16 @@ public class ShoeDAOImpl implements ShoeDAO {
 				}	
 	}
 		return l;
+	}
+	
+	public List<Shoe> getShoeByRpriceLessThanEqualTo(int rprice) {
+		ArrayList<Shoe> list = new ArrayList<>();
+		for (Shoe shoe : shoes.values()) {
+			if(shoe.getRprice()<=rprice) {
+				list.add(shoe);
+			}
+		}
+		return list;
 	}
 
 	@Override

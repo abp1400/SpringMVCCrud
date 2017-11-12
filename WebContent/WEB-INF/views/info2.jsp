@@ -14,6 +14,7 @@
 ${shoe.brand}<br> 
 ${shoe.style}<br>
 ${shoe.pprice}<br>
+${shoe.rprice}<br>
 
 
 </c:forEach>

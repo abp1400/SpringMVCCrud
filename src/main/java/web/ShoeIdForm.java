@@ -1,22 +1,26 @@
 package web;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 public class ShoeIdForm {
-	@NotNull(message="Brand cannot be null, please enter a brand")
-	@Size(min=2,max =100, message="Please enter a style name between 2 and 100 characters.")
-	private String brand;
+	
+	@NotNull(message="Resale price cannot be null, please enter a resale price")
+	@Min(value = 0, message="Minimum resale price is zero.")
+	@Max(value = 500000, message="Maximum resale price is $500000.")
+	
+	private int rprice;
 	
 	public ShoeIdForm() {
 	}
 
-	public String getBrand() {
-		return brand;
+	public int getrprice() {
+		return rprice;
 	}
 
-	public void setBrand(String brand) {
-		this.brand = brand;
+	public void setrprice(int rprice) {
+		this.rprice = rprice;
 	}
 	
 }
