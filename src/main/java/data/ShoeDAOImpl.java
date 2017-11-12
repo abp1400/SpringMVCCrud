@@ -18,7 +18,7 @@ public class ShoeDAOImpl implements ShoeDAO {
 	
 	public ShoeDAOImpl() {
 		
-		shoes = new HashMap<>();
+		shoes = new TreeMap<>();
 		loadSampleShoes();
 		
 	}
@@ -52,14 +52,12 @@ public class ShoeDAOImpl implements ShoeDAO {
 	@Override
 	public List<Shoe> getShoeByBrand(String brand) {
 		List<Shoe> l = new ArrayList<>();
-		
 		for (Shoe shoe: shoes.values()) {
 			if (shoe.getBrand().equalsIgnoreCase(brand)) {
 				l.add(shoe);
 				}	
 	}
 		return l;
-		
 	}
 
 	@Override

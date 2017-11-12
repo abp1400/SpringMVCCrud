@@ -8,6 +8,7 @@
 <title>Shoe Info</title>
 </head>
 <body>
+ 
 <c:forEach var="shoe" items="${shoes}">
 
 ${shoe.brand}<br> 
@@ -16,8 +17,10 @@ ${shoe.pprice}<br>
 
 
 </c:forEach>
-<p>
 
+  
+ 
+<p>
 
 <a href="home.do">Return to App Homepage</a>
 </p>

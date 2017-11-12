@@ -9,21 +9,32 @@
 <title>Welcome to ShoeBox App</title>
 </head>
 <body>
-<h1>Welcome to the ShoeBox app</h1>
-
-<c:set var="selectedItem" value=""/>
+<h1>Welcome to the ShoeBox App</h1>
 
 <h2>Filter Shoes by Brand</h2>
+<form action="selectAlt.do" method="POST">
+		<select name="brand">
+
+		<c:forEach var="shoe" items="${list}">
+		<option value="${shoe.brand}">${shoe.brand}</option>
+		
+		</c:forEach>
+
+		</select>
+		<input type="submit" value="Get shoe by brand">
+</form>
+
+
+
+<%-- <h2>Filter Shoes by </h2>
  <form:form action="getShoe.do" method="post" modelAttribute="idForm">
 <form:input path="brand"/> <form:errors path="brand"/>
 
 <input type="submit" value="Get Shoes by Brand">
 
-</form:form> 
+</form:form>  --%>
 
 
-
-<p>
 <h3>All Shoes:</h3> <br>
 
 <c:forEach var="shoe" items="${list}">
@@ -31,19 +42,19 @@
 <%-- <form method="post" action="delete.do">
 <input type = "submit" value ="Delete">
 <input type = "hidden" name="id" value="${shoe.index}">
-</form>
+</form>--%>
 <form method="post" action="update.do">
 <input type = "submit" value ="Update">
 <input type = "hidden" name="id" value="${shoe.index}">
-</form> --%>
+</form> 
 
 </c:forEach>
-
-
 
 <p>
  <a href="add.do">Add a Shoe</a>
 </p>
-
+<p>
+<a href="home.do">Go back to Shoebox App Homepage</a>
+</p>
 </body>
 </html>

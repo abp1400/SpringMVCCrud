@@ -80,7 +80,15 @@ public class ShoeController {
 		mv.setViewName("info2");
 		List<Shoe> l = dao.getShoeByBrand(f.getBrand());
 		mv.addObject("shoes",l);
-		System.out.println(l.get(0));
+		return mv;
+	}
+	
+	@RequestMapping(path="selectAlt.do", method=RequestMethod.POST,params="brand")
+	public ModelAndView getShoeByBrandAlt(@RequestParam(name="brand") String s) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("info2");
+		List<Shoe> l = dao.getShoeByBrand(s);
+		mv.addObject("shoes",l);
 		return mv;
 	}
 //	
@@ -91,7 +99,7 @@ public class ShoeController {
 		return "add";
 	}
 @RequestMapping(path="addShoe.do", method=RequestMethod.POST)
-public ModelAndView makeNewGiraffe(@Valid Shoe shoe, Errors e) {
+public ModelAndView makeNewShoe(@Valid Shoe shoe, Errors e) {
 	ModelAndView mv = new ModelAndView();
 	if(e.hasErrors()) {
 		mv.setViewName("add");
