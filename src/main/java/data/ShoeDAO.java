@@ -6,7 +6,9 @@ public interface ShoeDAO {
 
 		boolean addShoe(Shoe s);//Create
 		
-		Shoe  getShoeByBrand(String brand); //Retreive
+		List<Shoe> getShoeByBrand(String brand); //Retreive
+		
+		Shoe getShoeByIndex(int index);//Retrieve
 		
 		Shoe updateShoe(Shoe s); //Update
 		

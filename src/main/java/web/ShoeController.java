@@ -29,13 +29,13 @@ public class ShoeController {
 	public Shoe newShoe() {
 		return new Shoe();
 	}
-//	@RequestMapping("info.do")
-//	public ModelAndView getGiraffebyId(@RequestParam("id") Integer id) {
-//		Giraffe best = dao.getGiraffeById(id);
-//		ModelAndView mv = new ModelAndView("info");
-//		mv.addObject("giraffe",best);
-//		return mv;
-//	}
+	@RequestMapping("info.do")
+	public ModelAndView getGiraffebyIndex(@RequestParam("id") Integer index) {
+		Shoe s = dao.getShoeByIndex(index);
+		ModelAndView mv = new ModelAndView("info");
+		mv.addObject("shoe",s);
+		return mv;
+	}
 //	@RequestMapping("delete.do")
 //	public ModelAndView deleteGiraffebyId(@RequestParam("id") Integer id) {
 //		ModelAndView mv = new ModelAndView("deleted");
@@ -62,45 +62,46 @@ public class ShoeController {
 	public ModelAndView homeWithValidation() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("index");
-		ShoeForm f = new ShoeForm();
+		ShoeIdForm f = new ShoeIdForm();
 		mv.addObject("idForm", f);
 //		
-//		List<Giraffe> allGiraffes = dao.getAllGiraffes();
-//		mv.addObject("list",allGiraffes);
+		List<Shoe> allShoes = dao.getAllShoes();
+		mv.addObject("list",allShoes);
 		return mv;
 	}
 //	
-//	@RequestMapping(path="getGiraffe.do", method=RequestMethod.POST)
-//	public ModelAndView getGiraffebyIdForm(@Valid @ModelAttribute("idForm")GiraffeIdForm f, Errors e) {
-//		ModelAndView mv = new ModelAndView("index2");
-//		if(e.hasErrors()) {
-//			mv.setViewName("index2");
-//			return mv;
-//		}
-//		mv.setViewName("info");
-//		Giraffe best = dao.getGiraffeById(f.getId());
-//		mv.addObject("giraffe",best);
-//		return mv;
-//	}
+	@RequestMapping(path="getShoe.do", method=RequestMethod.POST)
+	public ModelAndView getShoeByBrand(@Valid @ModelAttribute("idForm") ShoeIdForm f, Errors e) {
+		ModelAndView mv = new ModelAndView("index");
+		if(e.hasErrors()) {
+			mv.setViewName("index");
+			return mv;
+		}
+		mv.setViewName("info2");
+		List<Shoe> l = dao.getShoeByBrand(f.getBrand());
+		mv.addObject("shoes",l);
+		System.out.println(l.get(0));
+		return mv;
+	}
 //	
-//	@RequestMapping(path="add.do", method=RequestMethod.GET)
-//	public String addGiraffe(Model m) {
-//		Giraffe g = new Giraffe();
-//		m.addAttribute("giraffe", g);
-//		return "add";
-//	}
-//	@RequestMapping(path="addGiraffe.do", method=RequestMethod.POST)
-//	public ModelAndView makeNewGiraffe(@Valid Giraffe giraffe, Errors e) {
-//		ModelAndView mv = new ModelAndView();
-//		if(e.hasErrors()) {
-//			mv.setViewName("add");
-//			return mv;
-//		}
-//		dao.addGiraffe(giraffe);
-//		mv.setViewName("added");
-//		return mv;
-//		
-//	}
+	@RequestMapping(path="add.do", method=RequestMethod.GET)
+	public String addShoe(Model m) {
+		Shoe s = new Shoe();
+		m.addAttribute("shoe", s);
+		return "add";
+	}
+@RequestMapping(path="addShoe.do", method=RequestMethod.POST)
+public ModelAndView makeNewGiraffe(@Valid Shoe shoe, Errors e) {
+	ModelAndView mv = new ModelAndView();
+	if(e.hasErrors()) {
+		mv.setViewName("add");
+		return mv;
+		}
+		dao.addShoe(shoe);
+		mv.setViewName("added");
+		return mv;
+		
+	}
 //	@RequestMapping(path="updateGiraffe.do", method=RequestMethod.POST)
 //	public ModelAndView makeUpdateGiraffe(@Valid Giraffe giraffe, Errors e) {
 //		ModelAndView mv = new ModelAndView();

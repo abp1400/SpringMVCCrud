@@ -50,15 +50,15 @@ public class ShoeDAOImpl implements ShoeDAO {
 	}
 
 	@Override
-	public Shoe getShoeByBrand(String brand) {
-		Shoe s = null;
-		List<Shoe> list = new ArrayList<Shoe>(this.shoes.values());
-		for (Shoe shoe: list) {
-			if (s.getBrand().equalsIgnoreCase(brand)) {
-				s = shoe;
+	public List<Shoe> getShoeByBrand(String brand) {
+		List<Shoe> l = new ArrayList<>();
+		
+		for (Shoe shoe: shoes.values()) {
+			if (shoe.getBrand().equalsIgnoreCase(brand)) {
+				l.add(shoe);
 				}	
 	}
-		return s;
+		return l;
 		
 	}
 
@@ -72,6 +72,10 @@ public class ShoeDAOImpl implements ShoeDAO {
 	public boolean deleteShoe(Shoe s) {
 		shoes.remove(s.getIndex());
 		return true;
+	}
+	@Override
+	public Shoe getShoeByIndex(int index) {
+		return shoes.get(index);
 	}
 
 }

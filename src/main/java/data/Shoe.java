@@ -18,11 +18,11 @@ public class Shoe {
 	private String color;
 	
 	@Min(value = 0, message="Minimum purchase price is zero.")
-	@Max(value = 99, message="Maximum neck length is 500000.")
+	@Max(value = 500000, message="Maximum resale price is $500000.")
 	private int pprice;
 	
 	@Min(value = 0, message="Minimum resale price is zero.")
-	@Max(value = 99, message="Maximum neck length is 500000.")
+	@Max(value = 500000, message="Maximum resale price is $500000.")
 	private int rprice;
 	
 	@NotNull (message="You must enter an image url")

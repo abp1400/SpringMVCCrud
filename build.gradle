@@ -2,7 +2,7 @@ apply plugin:'java'
 apply plugin:'eclipse-wtp'
 apply plugin:'war'
 
-group="HelloGiraffe"
+group="ShoeBox"
 version - "0.0.1"
 
 
