@@ -40,13 +40,13 @@
 
 <c:forEach var="shoe" items="${list}">
 <a href="info.do?id=${shoe.index}"> ${shoe.brand} ${shoe.style}</a><br>
-<%-- <form method="post" action="delete.do">
+<form method="post" action="delete.do">
 <input type = "submit" value ="Delete">
-<input type = "hidden" name="id" value="${shoe.index}">
-</form>--%>
+<input type = "hidden" name="index" value="${shoe.index}">
+</form>
 <form method="post" action="update.do">
 <input type = "submit" value ="Update">
-<input type = "hidden" name="id" value="${shoe.index}">
+<input type = "hidden" name="index" value="${shoe.index}">
 </form> 
 
 </c:forEach>

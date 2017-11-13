@@ -8,19 +8,24 @@ import javax.validation.constraints.Size;
 public class Shoe {
 	private int index;
 	
+	@NotNull (message="You must enter a brand.")
 	@Size(min=2,max =100, message="Please enter a brand name between 2 and 100 characters.")
 	private String brand;
 	
+	@NotNull (message="You must enter a style.")
 	@Size(min=2,max =100, message="Please enter a style name between 2 and 100 characters.")
 	private String style;
 	
-	@Size(min=2,max =100, message="Please enter a style name between 2 and 100 characters.")
+	@NotNull (message="You must enter a color.")
+	@Size(min=2,max =100, message="Please enter a color name between 2 and 100 characters.")
 	private String color;
 	
+	@NotNull (message="You must enter a purchase price.")
 	@Min(value = 0, message="Minimum purchase price is zero.")
 	@Max(value = 500000, message="Maximum resale price is $500000.")
 	private int pprice;
 	
+	@NotNull (message="You must enter a resale price.")
 	@Min(value = 0, message="Minimum resale price is zero.")
 	@Max(value = 500000, message="Maximum resale price is $500000.")
 	private int rprice;

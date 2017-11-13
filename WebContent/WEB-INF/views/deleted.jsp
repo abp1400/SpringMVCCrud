@@ -4,14 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Shoe Info</title>
+<title>Shoe Removed</title>
 </head>
 <body>
-${shoe.brand}<br>
-${shoe.style}<br>
-${shoe.color}<br>
-$${shoe.pprice}<br>
-$${shoe.rprice}<br>
+<h3>The ${brand}${style} Was Removed from the Inventory</h3><br>
 
 <p>
 

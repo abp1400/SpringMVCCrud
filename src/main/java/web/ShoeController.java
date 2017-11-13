@@ -36,21 +36,22 @@ public class ShoeController {
 		mv.addObject("shoe",s);
 		return mv;
 	}
-//	@RequestMapping("delete.do")
-//	public ModelAndView deleteGiraffebyId(@RequestParam("id") Integer id) {
-//		ModelAndView mv = new ModelAndView("deleted");
-//		Giraffe best = dao.getGiraffeById(id);
-//		dao.deleteGiraffe(best);
-//		mv.addObject("name",best.getName());
-//		return mv;
-//	}
-//	@RequestMapping(path="update.do", params="id")
-//	public ModelAndView updateGiraffebyId(@RequestParam("id") Integer id) {
-//		ModelAndView mv = new ModelAndView("update");
-//		Giraffe best = dao.getGiraffeById(id);
-//		mv.addObject("giraffe",best);
-//		return mv;
-//	}
+	@RequestMapping("delete.do")
+	public ModelAndView deleteGiraffebyId(@RequestParam("index") Integer index) {
+		ModelAndView mv = new ModelAndView("deleted");
+		Shoe s = dao.getShoeByIndex(index);
+		dao.deleteShoe(s);
+		mv.addObject("brand",s.getBrand());
+		mv.addObject("style",s.getStyle());
+		return mv;
+	}
+	@RequestMapping(path="update.do", params="index")
+	public ModelAndView updateGiraffebyId(@RequestParam("index") Integer index) {
+		ModelAndView mv = new ModelAndView("update");
+		Shoe s = dao.getShoeByIndex(index);
+		mv.addObject("shoe",s);
+		return mv;
+	}
 //	
 //	public String home() {
 //	
@@ -110,16 +111,17 @@ public ModelAndView makeNewShoe(@Valid Shoe shoe, Errors e) {
 		return mv;
 		
 	}
-//	@RequestMapping(path="updateGiraffe.do", method=RequestMethod.POST)
-//	public ModelAndView makeUpdateGiraffe(@Valid Giraffe giraffe, Errors e) {
-//		ModelAndView mv = new ModelAndView();
-//		if(e.hasErrors()) {
-//			mv.setViewName("update");
-//			return mv;
-//		}
-//		dao.updateGiraffe(giraffe);
-//		mv.setViewName("added");
-//		return mv;
-//		
+	@RequestMapping(path="updateShoe.do", method=RequestMethod.POST)
+	public ModelAndView makeUpdateGiraffe(@Valid Shoe shoe, Errors e) {
+		ModelAndView mv = new ModelAndView();
+		if(e.hasErrors()) {
+			mv.setViewName("update");
+			return mv;
+		}
+		dao.updateShoe(shoe);
+		mv.setViewName("added");
+		return mv;
+		
 	}
+}
 	
