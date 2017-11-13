@@ -6,20 +6,51 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	
+</script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	
+</script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+	integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+	crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/info.css">
+	
 <title>Add a New Shoe</title>
 </head>
 <body>
-<h3>Enter Shoe Data</h3>
+<div class="headBar">
+<h1>Enter Shoe Data</h1>
+
+</div>
+
+<div id="wrapper">
+<div class="container">
 <form:form action="addShoe.do" method ="post" modelAttribute="shoe">
-Brand: <form:input path="brand"/> <form:errors path="brand"/> <br>
-Style: <form:input path="style"/> <form:errors path="style"/><br>
-Purchase Price: <form:input path="pprice"/> <form:errors path="pprice"/><br>
-Resale Price:<form:input path="rprice"/> <form:errors path="rprice"/><br>
-Image URL: <form:input path="imageUrl"/> <form:errors path="imageUrl"/><br>
-<input type="submit" value="Add a Shoe">
+<form:errors path="*"></form:errors>
+Brand:&nbsp;&nbsp;&nbsp; <form:input path="brand"/> <form:errors path="brand"/> <br>
+Style:&nbsp;&nbsp;&nbsp; <form:input path="style"/> <form:errors path="style"/><br>
+Color:&nbsp;&nbsp;&nbsp; <form:input path="color"/> <form:errors path="color"/><br>
+Purchase Price:&nbsp;&nbsp;&nbsp; <form:input path="pprice"/> <form:errors path="pprice"/><br>
+Resale Price:&nbsp;&nbsp;&nbsp;<form:input path="rprice"/> <form:errors path="rprice"/><br>
+Image URL:&nbsp;&nbsp;&nbsp; <form:input path="imageUrl"/> <form:errors path="imageUrl"/><br>
+<input type="submit" value="Add a Shoe"><br>
 
 </form:form>
-
-
+</div>
+<br>
+<br>
+<p>
+<a href="home.do">Return to App Homepage</a>
+</p>
+</div>
 </body>
 </html>

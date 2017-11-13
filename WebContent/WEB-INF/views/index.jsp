@@ -36,13 +36,14 @@
 
 </head>
 <body>
+<div class="headBar">	
+<h1>Welcome to the ShoeBox App</h1>
+</div>
 
 <div class="parallax">
 		<!-- Image of Shoes goes here and title will scroll over it. -->
 	</div>
-<div class="headBar">	
-<h1>Welcome to the ShoeBox App</h1>
-</div>
+
 <div class="formBox">
 <h2>Filter Shoes by Brand</h2>
 <form action="selectAlt.do" method="POST">
@@ -66,7 +67,7 @@
  <form:form action="getShoeByPrice.do" method="post" modelAttribute="idForm">
 <form:input path="rprice"/> <form:errors path="rprice"/>
 
-<input type="submit" value="Get Shoes by Resale Value">
+<input type="submit" value="Get Shoes by Resale Price">
 
 </form:form> 
 
@@ -75,7 +76,7 @@
 <h2>All Shoes:</h2> <br>
 <div class="container">
 <c:forEach var="shoe" items="${list}">
-<a href="info.do?id=${shoe.index}"> ${shoe.brand}${shoe.style}</a><br>
+<a href="info.do?id=${shoe.index}"> ${shoe.brand}&nbsp;${shoe.style}</a><br>
 <a href="info.do?id=${shoe.index}"><img src="${shoe.imageUrl}"/></a><br>
 <form method="post" action="delete.do">
 <input type = "submit" value ="Delete">
