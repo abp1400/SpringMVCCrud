@@ -21,18 +21,18 @@ public class ShoeDAOImpl implements ShoeDAO {
 		
 	}
 	private void loadSampleShoes() {
-		shoes.put(index, new Shoe(index++,"Nike","Lebron 9","Cool Grey",170,350,"A.jpg"));
-		shoes.put(index, new Shoe(index++,"Jordan","Jordan 5","Black",125,1000,"B.jpg"));
-		shoes.put(index, new Shoe(index++,"Nike","Kobe 5 Bruce Lee","Yellow",150,600,"C.jpg"));
-		shoes.put(index, new Shoe(index++,"Adidas","Yeezy Boost 750","Black",350,1200,"D.jpg"));
-		shoes.put(index, new Shoe(index++,"Under Armour","Curry 2","Cobalt",120,225,"E.jpg"));
-		shoes.put(index, new Shoe(index++,"Nike","Galaxy Foamposite","Purple",220,1200,"F.jpg"));
-		shoes.put(index, new Shoe(index++,"Jordan","Jordan 11","Black-Red",125,465,"G.jpg"));
-		shoes.put(index, new Shoe(index++,"Adidas","Crazy 8","Black-White",125,350,"H.jpg"));
-		shoes.put(index, new Shoe(index++,"Jordan","Jordan 1","Red-White",65,2500,"I.jpg"));
-		shoes.put(index, new Shoe(index++,"Nike","Air Yeezy 2","Red",245,5500,"J.jpg"));
-		shoes.put(index, new Shoe(index++,"Nike","Air Mag Auto Lace","Grey",10,55000,"K.jpg"));
-		shoes.put(index, new Shoe(index++,"Adidas","Yeezy Boost 350 V2","Black",220,1150,"L.jpg"));
+		shoes.put(index, new Shoe(index++,"Nike","Lebron 9","Cool Grey",170,350,"pictures/A.jpg"));
+		shoes.put(index, new Shoe(index++,"Jordan","Jordan 5","Black",125,1000,"pictures/B.jpg"));
+		shoes.put(index, new Shoe(index++,"Nike","Kobe 5 Bruce Lee","Yellow",150,600,"pictures/C.jpg"));
+		shoes.put(index, new Shoe(index++,"Adidas","Yeezy Boost 750","Black",350,1200,"pictures/D.jpg"));
+		shoes.put(index, new Shoe(index++,"Under Armour","Curry 2","Cobalt",120,225,"pictures/E.jpg"));
+		shoes.put(index, new Shoe(index++,"Nike","Galaxy Foamposite","Purple",220,1200,"pictures/F.jpg"));
+		shoes.put(index, new Shoe(index++,"Jordan","Jordan 11","Black-Red",125,465,"pictures/G.jpg"));
+		shoes.put(index, new Shoe(index++,"Adidas","Crazy 8","Black-White",125,350,"pictures/H.jpg"));
+		shoes.put(index, new Shoe(index++,"Jordan","Jordan 1","Red-White",65,2500,"pictures/I.jpg"));
+		shoes.put(index, new Shoe(index++,"Nike","Air Yeezy 2","Red",245,5500,"pictures/J.jpg"));
+		shoes.put(index, new Shoe(index++,"Nike","Air Mag Auto Lace","Grey",10,55000,"pictures/K.jpg"));
+		shoes.put(index, new Shoe(index++,"Adidas","Yeezy Boost 350 V2","Black",220,1150,"pictures/L.jpg"));
 		
 	}
 	

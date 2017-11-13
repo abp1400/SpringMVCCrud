@@ -7,6 +7,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Welcome to ShoeBox App</title>
+
+<style>
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+</style>
 </head>
 <body>
 <h1>Welcome to the ShoeBox App</h1>
@@ -39,7 +52,7 @@
 <h3>All Shoes:</h3> <br>
 
 <c:forEach var="shoe" items="${list}">
-<a href="info.do?id=${shoe.index}"> ${shoe.brand} ${shoe.style}</a><br>
+<a href="info.do?id=${shoe.index}"> ${shoe.brand} ${shoe.style}<img src="${shoe.imageUrl}" style="width:150px"/></a><br>
 <form method="post" action="delete.do">
 <input type = "submit" value ="Delete">
 <input type = "hidden" name="index" value="${shoe.index}">
