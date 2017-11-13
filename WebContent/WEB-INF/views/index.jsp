@@ -63,7 +63,7 @@
 <br>
 
 <h2>Filter Shoes by Resale Price </h2>
- <h3>Enter a Maximum Resale Price in $:</h3>
+ <h3>Enter a Minimum Resale Price in $:</h3>
  <form:form action="getShoeByPrice.do" method="post" modelAttribute="idForm">
 <form:input path="rprice"/> <form:errors path="rprice"/>
 

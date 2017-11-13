@@ -62,7 +62,7 @@ public class ShoeDAOImpl implements ShoeDAO {
 	public List<Shoe> getShoeByRpriceLessThanEqualTo(int rprice) {
 		ArrayList<Shoe> list = new ArrayList<>();
 		for (Shoe shoe : shoes.values()) {
-			if(shoe.getRprice()<=rprice) {
+			if(shoe.getRprice()>=rprice) {
 				list.add(shoe);
 			}
 		}
