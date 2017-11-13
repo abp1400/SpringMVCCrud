@@ -7,11 +7,12 @@
 <title>Shoe Info</title>
 </head>
 <body>
-${shoe.brand}<br>
-${shoe.style}<br>
-${shoe.color}<br>
-$${shoe.pprice}<br>
-$${shoe.rprice}<br>
+Brand: ${shoe.brand}<br> 
+Style: ${shoe.style}<br>
+Color: ${shoe.color}<br>
+Purchase Price $${shoe.pprice}<br>
+Resale Price $${shoe.rprice}<br>
+<img src="${shoe.imageUrl}"/><br>
 
 <p>
 

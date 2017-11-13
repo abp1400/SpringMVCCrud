@@ -7,11 +7,12 @@
 <title>New Shoe Added</title>
 </head>
 <body>
-${shoe.brand}<br>
-${shoe.style}<br>
-${shoe.pprice}<br>
-${shoe.rprice}<br>
-${shoe.imageUrl}<br>
+Brand: ${shoe.brand}<br> 
+Style: ${shoe.style}<br>
+Color: ${shoe.color}<br>
+Purchase Price $${shoe.pprice}<br>
+Resale Price $${shoe.rprice}<br>
+<img src="${shoe.imageUrl}"/><br>
 <p>
 <a href="home.do">Return to App Homepage</a>
 </p>

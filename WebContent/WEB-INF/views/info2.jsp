@@ -5,17 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="css/info.css">
 <title>Shoe Info</title>
 </head>
 <body>
  
 <c:forEach var="shoe" items="${shoes}">
 
-${shoe.brand}<br> 
-${shoe.style}<br>
-${shoe.pprice}<br>
-${shoe.rprice}<br>
-
+Brand: ${shoe.brand}<br> 
+Style: ${shoe.style}<br>
+Color: ${shoe.color}<br>
+Purchase Price $${shoe.pprice}<br>
+Resale Price $${shoe.rprice}<br>
+<img src="${shoe.imageUrl}"/><br><br>
 
 </c:forEach>
 

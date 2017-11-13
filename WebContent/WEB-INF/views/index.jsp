@@ -75,8 +75,8 @@
 <h2>All Shoes:</h2> <br>
 <div class="container">
 <c:forEach var="shoe" items="${list}">
-<a href="info.do?id=${shoe.index}"> ${shoe.brand}${shoe.style}&nbsp;&nbsp;<img src="${shoe.imageUrl}" /></a><br>
-
+<a href="info.do?id=${shoe.index}"> ${shoe.brand}${shoe.style}</a><br>
+<a href="info.do?id=${shoe.index}"><img src="${shoe.imageUrl}"/></a><br>
 <form method="post" action="delete.do">
 <input type = "submit" value ="Delete">
 <input type = "hidden" name="index" value="${shoe.index}">
