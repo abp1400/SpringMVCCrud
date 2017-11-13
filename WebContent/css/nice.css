@@ -1,0 +1,143 @@
+@charset "UTF-8";
+body, html {
+	height: 100%;
+}
+
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 150px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+h1{
+font-family:sans-serif;
+/* background-color: yellow;
+color:blue */;
+text-align: center;
+/* position: absolute; */
+/* 	top: 50%;
+	left: 50%; */
+}
+h2{
+font-family:sans-serif;
+color:white;
+text-align:center;
+}	
+
+}
+@charset "UTF-8";
+body, html {
+	height: 100%;
+}
+
+/* this will be the image of the white house, with the scroll over that */
+.parallax {
+	/* The image used */
+	background-image: url("../pictures/heads.jpg");
+	/* Set a specific height */
+	height: 600px;
+	/* Create the parallax scrolling effect */
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.formBox {
+	background-image: url("../pictures/court.jpg");
+	position: absolute;
+	width: 300px;
+	height: 175px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	text-align: center;
+	
+	
+}
+
+.formBox h2{
+	color:black;
+}
+
+.headBar {
+	position: inherit;
+	width: inherit;
+	height: 40px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	background-color: brown;
+	color: goldenrod;
+}
+
+
+
+img {
+	position: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 170px;
+}
+
+img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+a{
+	color:crimson;
+	font-size:large;
+}
+
+a:hover{
+	color:gold;
+	text-decoration:none;
+}
+
+#wrapper {
+
+  background-image: url("../pictures/echocourt.jpg");
+  /* height: 320px; */
+	background-position: center;
+	background-repeat: repeat;
+	background-size: cover;
+	
+}
+#content {
+  float: left;
+  word-wrap: break-word;
+}
+#sidebar {
+  float: right;
+}
+#cleared {
+  clear: both;
+}
+#bottom a{
+	color:DarkOrange;
+	
+}
+
+#bottom a:hover{
+	color:lime;
+	text-decoration:none;
+	
+}
+.bottomNav {
+	position: inherit;
+	width: inherit;
+	height: 45px;
+	z-index: 15;
+	top: 50%;
+	left: 50%;
+	text-align: center;
+	background-color: black;
+	
+}
