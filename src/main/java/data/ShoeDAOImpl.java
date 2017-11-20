@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 
 import java.util.*;
-@Repository
+
 public class ShoeDAOImpl implements ShoeDAO {
 	
 	Map<Integer, Shoe> shoes;

@@ -21,7 +21,7 @@ USE `shoedb` ;
 DROP TABLE IF EXISTS `shoe` ;
 
 CREATE TABLE IF NOT EXISTS `shoe` (
-  `index` INT NOT NULL,
+  `index` INT NOT NULL AUTO_INCREMENT,
   `brand` VARCHAR(45) NOT NULL,
   `style` VARCHAR(100) NOT NULL,
   `color` VARCHAR(100) NOT NULL,
@@ -60,5 +60,6 @@ INSERT INTO `shoe` (`index`, `brand`, `style`, `color`, `purchase_price`, `resal
 INSERT INTO `shoe` (`index`, `brand`, `style`, `color`, `purchase_price`, `resale_price`, `image_url`) VALUES (10, 'Nike', 'Air Yeezy 2', 'Red', 245, 5500, 'pictures/J.jpg');
 INSERT INTO `shoe` (`index`, `brand`, `style`, `color`, `purchase_price`, `resale_price`, `image_url`) VALUES (11, 'Nike', 'Air Mag Auto Lace', 'Grey', 10, 55000, 'pictures/K.jpg');
 INSERT INTO `shoe` (`index`, `brand`, `style`, `color`, `purchase_price`, `resale_price`, `image_url`) VALUES (12, 'Adidas', 'Yeezy Boost 350 V2', 'Black', 220, 1150, 'pictures/L.jpg');
+INSERT INTO `shoe` (`index`, `brand`, `style`, `color`, `purchase_price`, `resale_price`, `image_url`) VALUES (13, 'Jordan', 'Jordan 9', 'White-Black', 125, 600, 'pictures/M.jpg');
 
 COMMIT;
