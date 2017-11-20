@@ -14,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.mysql.jdbc.Statement;
 
 
+
 @Primary
 @Repository
 public class ShoeDAOImplDB implements ShoeDAO {
@@ -103,9 +104,35 @@ public class ShoeDAOImplDB implements ShoeDAO {
 
 	@Override
 	public List<Shoe> getShoeByBrand(String brand) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		Shoe s = null; 
+		List<Shoe> list = new ArrayList<>();
+		
+		try {
+		    Connection conn = DriverManager.getConnection(url, user, pass);
+		    String sql = "SELECT shoeid,style,color,purchase_price,resale_price,image_url FROM shoe WHERE brand = ?";
+		    PreparedStatement stmt = conn.prepareStatement(sql);
+		    stmt.setString(1,brand);
+		    ResultSet rs = stmt.executeQuery();
+		    while (rs.next()) {
+		    int shoeid = rs.getInt(1);  
+		    	//String brand1 = rs.getString(2);
+		    String style = rs.getString(2);
+		    String color = rs.getString(3);
+		    int pprice = rs.getInt(4);
+		    int rprice = rs.getInt(5);
+		    String imageurl = rs.getString(6);
+	
+		    s = new Shoe(shoeid,brand,style,color,pprice,rprice,imageurl);
+		      list.add(s);
+		    }
+		    rs.close();
+		    stmt.close();
+		    conn.close();
+		  } catch (SQLException e) {
+		    e.printStackTrace();
+		  }
+	return list;
+}
 
 	@Override
 	public Shoe getShoeByShoeid(int shoeid) {
