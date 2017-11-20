@@ -27,7 +27,7 @@
 </head>
 <body>
 <div class="headBar">
-<h1>The ${brand}${style} Was Removed from the Inventory</h1><br>
+<h1>The Shoe Was Removed from the Inventory</h1><br>
 </div>
 <div id="wrapper">
 <br>

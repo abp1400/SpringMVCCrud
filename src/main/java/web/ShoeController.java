@@ -31,35 +31,29 @@ public class ShoeController {
 	}
 
 	@RequestMapping("info.do")
-	public ModelAndView getGiraffebyIndex(@RequestParam("id") Integer index) {
-		Shoe s = dao.getShoeByIndex(index);
+	public ModelAndView getGiraffebyIndex(@RequestParam("id") Integer shoeid) {
+		Shoe s = dao.getShoeByShoeid(shoeid);
 		ModelAndView mv = new ModelAndView("info");
 		mv.addObject("shoe", s);
 		return mv;
 	}
 
 	@RequestMapping("delete.do")
-	public ModelAndView deleteGiraffebyId(@RequestParam("index") Integer index) {
+	public ModelAndView deleteGiraffebyId(@RequestParam("index") Integer shoeid) {
 		ModelAndView mv = new ModelAndView("deleted");
-		Shoe s = dao.getShoeByIndex(index);
+		Shoe s = dao.getShoeByShoeid(shoeid);
 		dao.deleteShoe(s);
-		mv.addObject("brand", s.getBrand());
-		mv.addObject("style", s.getStyle());
 		return mv;
 	}
 
 	@RequestMapping(path = "update.do", params = "index")
-	public ModelAndView updateGiraffebyId(@RequestParam("index") Integer index) {
+	public ModelAndView updateGiraffebyId(@RequestParam("index") Integer shoeid) {
 		ModelAndView mv = new ModelAndView("update");
-		Shoe s = dao.getShoeByIndex(index);
+		Shoe s = dao.getShoeByShoeid(shoeid);
 		mv.addObject("shoe", s);
 		return mv;
 	}
-	//
-	// public String home() {
-	//
-	// return "index";
-	// }
+
 
 	@RequestMapping(path = "home.do", method = RequestMethod.GET)
 	public ModelAndView homeWithValidation() {
@@ -118,7 +112,7 @@ public class ShoeController {
 	}
 
 	@RequestMapping(path = "updateShoe.do", method = RequestMethod.POST)
-	public ModelAndView makeUpdateGiraffe(@Valid Shoe shoe, Errors e) {
+	public ModelAndView makeUpdateShoe(@Valid Shoe shoe, Errors e) {
 		ModelAndView mv = new ModelAndView();
 		if (e.hasErrors()) {
 			mv.setViewName("update");

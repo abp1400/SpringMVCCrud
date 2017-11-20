@@ -76,15 +76,15 @@
 <h2>All Shoes:</h2> <br>
 <div class="container">
 <c:forEach var="shoe" items="${list}">
-<a href="info.do?id=${shoe.index}"> ${shoe.brand}&nbsp;${shoe.style}</a><br>
-<a href="info.do?id=${shoe.index}"><img src="${shoe.imageUrl}"/></a><br>
+<a href="info.do?id=${shoe.shoeid}"> ${shoe.brand}&nbsp;${shoe.style}</a><br>
+<a href="info.do?id=${shoe.shoeid}"><img src="${shoe.imageUrl}"/></a><br>
 <form method="post" action="delete.do">
 <input type = "submit" value ="Delete">
-<input type = "hidden" name="index" value="${shoe.index}">
+<input type = "hidden" name="index" value="${shoe.shoeid}">
 </form>
 <form method="post" action="update.do">
 <input type = "submit" value ="Update">
-<input type = "hidden" name="index" value="${shoe.index}">
+<input type = "hidden" name="index" value="${shoe.shoeid}">
 </form> 
 
 </c:forEach>

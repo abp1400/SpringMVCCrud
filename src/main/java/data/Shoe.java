@@ -6,7 +6,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Shoe {
-	private int index;
+	private int shoeid;
 	
 	@NotNull (message="You must enter a brand.")
 	@Size(min=2,max =100, message="Please enter a brand name between 2 and 100 characters.")
@@ -36,9 +36,9 @@ public class Shoe {
 	public Shoe() {}
 	
 	
-	public Shoe(int index,String brand, String style, String color,int pprice, int rprice, String imageUrl) {
+	public Shoe(int shoeid,String brand, String style, String color,int pprice, int rprice, String imageUrl) {
 		super();
-		this.index = index;
+		this.shoeid = shoeid;
 		this.brand = brand;
 		this.style = style;
 		this.color = color;
@@ -48,12 +48,12 @@ public class Shoe {
 	}
 
 
-	public int getIndex() {
-		return index;
+	public int getShoeid() {
+		return shoeid;
 	}
 
-	public void setIndex(int index) {
-		this.index = index;
+	public void setShoeid(int index) {
+		this.shoeid = index;
 	}
 
 	public String getStyle() {
@@ -112,7 +112,7 @@ public class Shoe {
 
 	@Override
 	public String toString() {
-		return "Shoe [index=" + index + ", brand=" + brand + ", style=" + style + ", color=" + color + ", pprice="
+		return "Shoe [shoeid=" + shoeid + ", brand=" + brand + ", style=" + style + ", color=" + color + ", pprice="
 				+ pprice + ", rprice=" + rprice + ", imageUrl=" + imageUrl + "]";
 	}
 
@@ -121,7 +121,7 @@ public class Shoe {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + index;
+		result = prime * result + shoeid;
 		return result;
 	}
 
@@ -135,7 +135,7 @@ public class Shoe {
 		if (getClass() != obj.getClass())
 			return false;
 		Shoe other = (Shoe) obj;
-		if (index != other.index)
+		if (shoeid != other.shoeid)
 			return false;
 		return true;
 	}
