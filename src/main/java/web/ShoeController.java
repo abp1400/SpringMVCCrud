@@ -76,7 +76,7 @@ public class ShoeController {
 			return mv;
 		}
 		mv.setViewName("info2");
-		List<Shoe> l = dao.getShoeByRpriceLessThanEqualTo(f.getrprice());
+		List<Shoe> l = dao.getShoeByRpriceGreaterThanEqualTo(f.getrprice());
 		mv.addObject("shoes", l);
 		return mv;
 	}

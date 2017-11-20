@@ -11,7 +11,7 @@ public interface ShoeDAO {
 		
 		Shoe getShoeByShoeid(int shoeid);//Retrieve
 		
-		List<Shoe> getShoeByRpriceLessThanEqualTo(int rprice);//Retrieve
+		List<Shoe> getShoeByRpriceGreaterThanEqualTo(int rprice);//Retrieve
 		
 		Shoe updateShoe(Shoe s); //Update
 		

@@ -167,10 +167,36 @@ public class ShoeDAOImplDB implements ShoeDAO {
 	
 
 	@Override
-	public List<Shoe> getShoeByRpriceLessThanEqualTo(int rprice) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	public List<Shoe> getShoeByRpriceGreaterThanEqualTo(int rprice) {
+		Shoe s = null; 
+		List<Shoe> list = new ArrayList<>();
+		
+		try {
+		    Connection conn = DriverManager.getConnection(url, user, pass);
+		    String sql = "SELECT shoeid, brand,style,color,purchase_price,resale_price,image_url FROM shoe WHERE resale_price >= ?";
+		    PreparedStatement stmt = conn.prepareStatement(sql);
+		    stmt.setInt(1,rprice);
+		    ResultSet rs = stmt.executeQuery();
+		    while (rs.next()) {
+		    int shoeid = rs.getInt(1);  
+		    	String brand = rs.getString(2);
+		    String style = rs.getString(3);
+		    String color = rs.getString(4);
+		    int pprice = rs.getInt(5);
+		    int rprice1 = rs.getInt(6);
+		    String imageurl = rs.getString(7);
+	
+		    s = new Shoe(shoeid,brand,style,color,pprice,rprice1,imageurl);
+		      list.add(s);
+		    }
+		    rs.close();
+		    stmt.close();
+		    conn.close();
+		  } catch (SQLException e) {
+		    e.printStackTrace();
+		  }
+	return list;
+}
 
 	@Override
 	public Shoe updateShoe(Shoe s) {

@@ -9,7 +9,6 @@ public class ShoeIdForm {
 	@NotNull(message="Resale price cannot be null, please enter a resale price")
 	@Min(value = 0, message="Minimum resale price is zero.")
 	@Max(value = 500000, message="Maximum resale price is $500000.")
-	
 	private int rprice;
 	
 	public ShoeIdForm() {
