@@ -112,14 +112,20 @@ public class ShoeController {
 	}
 
 	@RequestMapping(path = "updateShoe.do", method = RequestMethod.POST)
-	public ModelAndView makeUpdateShoe(@Valid Shoe shoe, Errors e) {
+	public ModelAndView makeUpdateShoe(Shoe shoe) {
 		ModelAndView mv = new ModelAndView();
-		if (e.hasErrors()) {
-			mv.setViewName("update");
-			return mv;
-		}
-		dao.updateShoe(shoe);
+		System.out.println("in the conroller");
+		//if (e.hasErrors()) {
+		//	System.out.println("went south");
+		//	mv.setViewName("update");
+		//	return mv;
+		//}
 		mv.setViewName("added");
+		Shoe ss = dao.updateShoe(shoe);
+		Integer shoeid = ss.getShoeid();
+		mv.addObject("shoe",ss);
+		mv.addObject("shoeid", shoeid);
+		
 		return mv;
 
 	}

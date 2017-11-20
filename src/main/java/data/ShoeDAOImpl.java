@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-public class ShoeDAOImpl implements ShoeDAO {
+public class ShoeDAOImpl /*implements ShoeDAO*/ {
 	
 	Map<Integer, Shoe> shoes;
 	
@@ -36,19 +36,19 @@ public class ShoeDAOImpl implements ShoeDAO {
 		
 	}
 	
-	@Override
+	//@Override
 	public List<Shoe> getAllShoes() {
 		return new ArrayList<Shoe>(shoes.values());
 	}
 
-	@Override
+	//@Override
 	public boolean addShoe(Shoe s) {
-		s.setIndex(index++);
-		shoes.put(s.getIndex(), s);
+		s.setShoeid(index++);
+		shoes.put(s.getShoeid(), s);
 		return true;
 	}
 
-	@Override
+	//@Override
 	public List<Shoe> getShoeByBrand(String brand) {
 		List<Shoe> l = new ArrayList<>();
 		for (Shoe shoe: shoes.values()) {
@@ -69,18 +69,18 @@ public class ShoeDAOImpl implements ShoeDAO {
 		return list;
 	}
 
-	@Override
+//	@Override
 	public Shoe updateShoe(Shoe s) {
-		return shoes.put(s.getIndex(),s);
+		return shoes.put(s.getShoeid(),s);
 		
 	}
 
-	@Override
+//	@Override
 	public boolean deleteShoe(Shoe s) {
-		shoes.remove(s.getIndex());
+		shoes.remove(s.getShoeid());
 		return true;
 	}
-	@Override
+//	@Override
 	public Shoe getShoeByIndex(int index) {
 		return shoes.get(index);
 	}

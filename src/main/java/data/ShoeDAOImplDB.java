@@ -147,8 +147,37 @@ public class ShoeDAOImplDB implements ShoeDAO {
 
 	@Override
 	public Shoe updateShoe(Shoe s) {
-		// TODO Auto-generated method stub
-		return null;
+	
+	    try {
+	      Connection conn = DriverManager.getConnection(url, user, pass);
+	    		String sql = "UPDATE shoe SET brand=?, style=?,color=?,purchase_price=?,resale_price=?,image_url=?" +"WHERE shoeid=?";
+	    		            
+	    		            PreparedStatement st = conn.prepareStatement(sql);
+	    		            st.setString(1,s.getBrand());
+	    		            st.setString(2,s.getStyle());
+	    		            st.setString(3,s.getColor());
+	    		            st.setInt(4,s.getPprice());
+	    		            st.setInt(5,s.getRprice());
+	    		            st.setString(6,s.getImageUrl());
+	    		            st.setInt(7,s.getShoeid());
+	    		            
+	    
+	      int uc = st.executeUpdate();
+	      if (uc == 1) {
+
+	    		        System.out.println(uc + " shoe record updated");
+	    		        conn.close();
+	    		    
+	    		        }
+	    		      else {
+	    		      s = null;
+	    		    }
+	      }
+	    catch (SQLException e) {
+	      e.printStackTrace();
+	      s = null;
+	    }
+	    return s;
 	}
 
 	@Override

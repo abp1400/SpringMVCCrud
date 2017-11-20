@@ -34,16 +34,14 @@
 <div id="wrapper">
 <div class="container">
 <form:form action="updateShoe.do" method ="post" modelAttribute="shoe">
-Brand: <form:input path="brand"/> <form:errors path="brand"/> <br>
-Style: <form:input path="style"/> <form:errors path="style"/> <br>
-Color: <form:input path="color"/> <form:errors path="color"/> <br>
-Purchase Price: <form:input path="pprice"/> <form:errors path="pprice"/><br>
-Resale Price: <form:input path="rprice"/> <form:errors path="rprice"/><br>
-Image URL: <form:input path="imageUrl"/> <form:errors path="imageUrl"/><br>
-<form:hidden path="index"/>
+Brand: <input type="text" name="brand" value="${shoe.brand}"> <br>
+Style: <input type="text" name="style" value="${shoe.style}"> <br>
+Color: <input type="text" name="color" value="${shoe.color}"> <br>
+Purchase Price: <input type="number" name="pprice" value="${shoe.pprice}"> <br>
+Resale Price: <input type="number" name="rprice" value="${shoe.rprice}"> <br>
+Image URL: <input type="text" name="imageUrl" value="${shoe.imageUrl}"><br>
+<input type="hidden" name="shoeid" value="${shoe.shoeid}">
 <input type="submit" value="Update">
-
-
 
 </form:form>
 </div>
